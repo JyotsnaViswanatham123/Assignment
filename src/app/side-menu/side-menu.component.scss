@@ -1,0 +1,177 @@
+@import "../../styles.scss";
+
+form {
+    color: $gray;
+}
+
+.margin-top {
+    margin-top: 20px;
+}
+.location-div {
+    padding-right: 0;
+}
+
+.family-type-div {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+.location {
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 2px solid $bg-color;
+    border-right: 0px;
+}
+
+.family-type {
+    border-radius: 10px;
+    border: 2px solid $bg-color;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 100%;
+}
+.search-icon {
+    background-color: $secondary;
+    padding-top: 7px;
+    border-radius: 10px;
+}
+.slider-div {
+    border: 2px solid $bg-color;
+    border-radius: 10px;
+    margin-left: 2px;
+    margin-right: 0;
+    height: 45px;
+}
+
+.gallon-text {
+    margin-bottom: 0;
+}
+
+.gallons-info {
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: $gray;
+    font-size: 14px;
+    height: 41px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.gallon-text {
+    color: $secondary;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.main-heading {
+    border-bottom: 2px solid $bg-color;
+}
+
+.location-type-div {
+    width: 102%;
+}
+
+.fuel-type {
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid $bg-color;
+    height: 40px;
+}
+
+mat-slider {
+    width: 100%;
+    margin-top: -3px;
+}
+mat-slider ::ng-deep .mat-slider-wrapper::ng-deep .mat-slider-thumb {
+    background-color: $bg-color;
+    border-radius: 0px;
+    background-image: url(https://img.icons8.com/metro/26/000000/pause.png);
+    background-position: center;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    border: 1px solid $secondary;
+}
+
+mat-slider ::ng-deep .mat-slider-wrapper {
+    height: 10px;
+}
+
+mat-slider ::ng-deep .mat-slider-wrapper {
+    height: 10px;
+}
+
+mat-slider ::ng-deep .mat-slider-wrapper ::ng-deep .mat-slider-track-wrapper {
+    height: 5px;
+}
+
+mat-slider ::ng-deep .mat-slider-wrapper ::ng-deep .mat-slider-track-wrapper ::ng-deep .mat-slider-track-background {
+    height: 10px;
+    background-color: $gray;
+}
+
+mat-slider ::ng-deep .mat-slider-wrapper ::ng-deep .mat-slider-track-wrapper ::ng-deep .mat-slider-track-fill {
+    height: 5px;
+    background-color: $secondary;
+}
+
+mat-select ::ng-deep .mat-select-trigger {
+    margin-top: 2%;
+}
+
+mat-select ::ng-deep .mat-select-trigger ::ng-deep .mat-select-value {
+    text-align: center;
+}
+
+mat-select ::ng-deep .mat-select-arrow {
+    border: solid $secondary;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(43deg);
+    -webkit-transform: rotate(43deg);
+    margin-right: 10px;
+}
+
+mat-radio-button ::ng-deep .mat-radio-container {
+    height: 50px;
+    width: 100px;
+    border-radius: 0;
+    background-color: #fff;
+    border-color: $bg-color;
+}
+mat-radio-button ::ng-deep .mat-radio-outer-circle,
+mat-radio-button ::ng-deep .mat-radio-checked .mat-radio-outer-circle {
+    height: 50px;
+    width: 100px;
+    border-radius: 0;
+    background-color: #fff;
+    border-color: $bg-color;
+}
+mat-radio-button ::ng-deep .mat-radio-inner-circle {
+    height: 50px;
+    width: 100px;
+    border-radius: 0;
+    background-color: #fff;
+    border-color: $bg-color;
+}
+
+:host ::ng-deep .mat-radio-checked .mat-radio-outer-circle {
+    background-color: $secondary;
+    border-color: $bg-color !important;
+}
+:host ::ng-deep .mat-radio-checked .mat-radio-inner-circle {
+    background-color: $secondary;
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color: $secondary;
+}
+
+:host ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color: $secondary !important;
+}

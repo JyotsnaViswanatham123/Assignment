@@ -1,0 +1,18 @@
+<div class="container">
+  <h5>The Heat Pump Water Heater Advantage</h5>
+  <div class="row advantages-info">
+    <div
+      class="col-4 heater-advantages"
+      *ngFor="let advantage of heaterAdvantages"
+    >
+      <h5
+        innerHTML="{{ advantage.heading }}"
+        class="primary-color advantage-heading"
+      ></h5>
+      <div class="info-icon">
+        <img src="../../assets/info-tooltip.svg" />
+      </div>
+      <p innerHTML="{{ advantage.description }}" class="description"></p>
+    </div>
+  </div>
+</div>

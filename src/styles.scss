@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+$primary: #00664F;
+$secondary: #F5A54C;
+$red: #DD2200;
+$bg-color: #EEEEEE;
+$gray: #666666;
+$lightgray: #656565;
+$lightorange: #F5A54C;
+
+.primary-color {
+    color:$primary;
+}
+
+.secondary-color {
+    color:$secondary;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-color {
+    background-color: $bg-color;
+}
+
+.info-icon {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

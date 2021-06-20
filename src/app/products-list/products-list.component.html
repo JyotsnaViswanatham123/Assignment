@@ -1,20 +1,161 @@
-<div class="col d-flex justify-content-left">
-  <button
-    (click)="processRadio('yes')"
-    [ngClass]="{ 'btn-selected': yesSelected }"
-    class="btn"
+<div class="bg-green heading-div">
+  <h5 class="product-list-heading">
+    Your project qualifies you for <b>incentives!</b>
+  </h5>
+  <img
+    class="tag-img"
+    src="/assets/Searching applicable rebates and incentives.svg"
+  />
+</div>
+<div class="container">
+  <h5 class="primary-color info-header">
+    Your Hybrid Electric Water Heater Recommended Options
+  </h5>
+</div>
+<div *ngIf="!productsToBeDisplayed">
+  <h4>No Products to display</h4>
+</div>
+<div *ngIf="productsToBeDisplayed" class="product-details-div">
+  <div
+    class="product-details"
+    *ngFor="let eachProduct of productsToBeDisplayed"
   >
-    Yes
-  </button>
-  <button
-    (click)="processRadio('no')"
-    [ngClass]="{ 'btn-selected': noSelected }"
-    class="btn"
-  >
-    No
-  </button>
-  <!-- <mat-radio-group hidden aria-label="Select an option">
-        <mat-radio-button [checked]="yesSelected" value="1">Option 1</mat-radio-button>
-        <mat-radio-button [checked]="noSelected" value="2">Option 2</mat-radio-button>
-    </mat-radio-group> -->
+    <div class="row product-heading">
+      <div class="manufacture-info col-8">
+        <h5 class="manufacturer-name">{{ eachProduct.manufacturer_name }}</h5>
+        <p class="product-name">{{ eachProduct.name }}</p>
+      </div>
+      <div class="col-4 heading-info">
+        <p class="decimal-val">3.4 ef</p>
+        <div class="info-icon">
+          <img class="info-img" src="/assets/info-tooltip-light.svg" />
+        </div>
+        <img class="logo" src="/assets/Energy_Star_logo.svg.png" />
+      </div>
+    </div>
+    <div class="product-description">
+      <div class="row description-1">
+        <div class="col-4">
+          <img class="img-1" src="/assets/img1" />
+        </div>
+        <div class="col-8">
+          <div class="row">
+            <div class="col-2 bullet">
+              <img
+                class="bullet-cicle"
+                src="/assets/circle-doodle-svgrepo-com.svg"
+              />
+            </div>
+            <div class="col-10 bullet-text">
+              <p>Leak detection with auto water shut-off</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2 bullet">
+              <img
+                class="bullet-cicle"
+                src="/assets/circle-doodle-svgrepo-com.svg"
+              />
+            </div>
+            <div class="col-10 bullet-text">
+              <p>Control from your smart phone</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2 bullet">
+              <img
+                class="bullet-cicle"
+                src="/assets/circle-doodle-svgrepo-com.svg"
+              />
+            </div>
+            <div class="col-10 bullet-text">
+              <p>Multiple operating modes</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-2 bullet">
+              <img
+                class="bullet-cicle"
+                src="/assets/circle-doodle-svgrepo-com.svg"
+              />
+            </div>
+            <div class="col-10 bullet-text">
+              <p>10 year manufacturer warranty</p>
+            </div>
+          </div>
+
+          <!-- <img src="../../assets/circle-outline-shape-svgrepo-com.svg" /> -->
+        </div>
+      </div>
+    </div>
+    <div class="pricing-details">
+      <div class="base-price row">
+        <div class="price col-3">
+          <h6>Base Price</h6>
+        </div>
+        <div class="dashed-line col-5">
+          <hr />
+        </div>
+        <div class="price-value col-4">
+          <h6>{{ eachProduct.base_price | currency }}</h6>
+        </div>
+      </div>
+      <div class="row inst-text">
+        <p class="installation-text">(Installation not included)</p>
+      </div>
+
+      <div class="incentives row">
+        <div class="col-6">
+          <p class="incentives-text">Available incentives</p>
+          <div class="img-info">
+            <img class="info-img" src="/assets/info-tooltip-light.svg" />
+          </div>
+        </div>
+        <div class="dashed-line col-3">
+          <hr />
+        </div>
+        <div class="col-3">
+          <p class="incentives-amount">
+            {{ eachProduct.incentives.totalAppliedIncentives | currency }}
+          </p>
+        </div>
+      </div>
+      <div class="row equipment-cost">
+        <div class="col-5">
+          <h6 class="equipment-text">Equipment Cost</h6>
+          <div class="img-info">
+            <img class="info-img" src="/assets/info-tooltip-light.svg" />
+          </div>
+        </div>
+        <div class="dashed-line col-3">
+          <hr />
+        </div>
+        <div class="col-4 secondary-color">
+          <p>{{ eachProduct.netCost | currency }}</p>
+        </div>
+        <div>
+          <div class="annual-est">
+            <p class="annual-est-text">
+              Your Est. Annual Savings is
+              <span class="primary-color">{{
+                eachProduct.est_annual_savings_cal | currency
+              }}</span>
+            </p>
+            <div class="img-info">
+              <img class="info-img" src="/assets/info-tooltip-light.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="info-quote">
+          <button class="quote-btn">Get Install Quote</button>
+        </div>
+        <button
+          class="mat-raised-button more-details"
+          (click)="openDialog(eachProduct.model_id)"
+        >
+          View More Details
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

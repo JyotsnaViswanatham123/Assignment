@@ -1,10 +1,200 @@
-.btn {
-    width: 100px;
-    border: 1px solid black;
-    border-radius: unset;
+@import "../../styles.scss";
+.product-list-heading {
+    color: white;
+    text-align: center;
+    display: inline-block;
+    padding: 1%;
 }
 
-.btn-selected {
-    background: orange;
+.tag-img {
+    height: 20px;
+    display: inline-block;
     color: white;
+    padding-bottom: 2px;
+}
+
+.heading-div {
+    text-align: center;
+    padding-right: 1%;
+}
+
+.info-header {
+    padding-top: 2%;
+    border-bottom: 2px solid black;
+}
+
+.info-icon {
+    padding-right: 10%;
+    padding-left: 9%;
+}
+
+.product-details {
+    background-color: white;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.product-details-div {
+    text-align: center;
+}
+
+.description-1 {
+    background-color: white;
+    padding: 4%;
+}
+
+.img-1 {
+    width: 95%;
+}
+
+.product-heading {
+    background-color: $gray;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    color: white;
+    text-align: left;
+}
+
+.info-img {
+    width: 15px;
+}
+
+.logo {
+    width: 39px;
+    border-radius: 5px;
+}
+
+.decimal-val {
+    display: inline-block;
+}
+
+.heading-info {
+    padding-top: 4%;
+    padding-left: 0;
+}
+.product-description {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: $lightgray;
+}
+
+.manufacture-info {
+    padding: 3%;
+}
+
+.manufacturer-name,
+.product-name {
+    margin-bottom: 0;
+}
+
+.bullet-cicle {
+    width: 10px;
+}
+
+.bullet-text {
+    padding-left: 0;
+    text-align: left;
+}
+
+.bullet {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.base-price {
+    color: $gray;
+    background-color: white;
+}
+
+hr {
+    border-top: 2px dashed $gray;
+    background-color: white;
+}
+
+.price {
+    padding-right: 0;
+    padding-left: 3%;
+}
+
+.dashed-line {
+    padding-right: 0;
+}
+
+.price-value {
+    padding-left: 0;
+}
+
+.installation-text {
+    text-align: left;
+    color: $lightgray;
+    padding-left: 4%;
+    font-size: 12px;
+}
+
+.inst-text {
+    background-color: white;
+}
+
+.incentives {
+    color: $lightgray;
+    background-color: white;
+}
+
+.incentives-text {
+    display: inline-block;
+    padding-left: 5%;
+}
+
+.img-info {
+    display: inline-block;
+    padding-left: 4px;
+}
+
+.incentives-amount {
+    padding-right: 20%;
+}
+
+.equipment-text {
+    display: inline-block;
+}
+
+.equipment-cost {
+    background-color: white;
+}
+
+.annual-est {
+    border: 2px solid $primary;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.annual-est-text {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.quote-btn {
+    width: 60%;
+    margin: auto;
+    background-color: orange;
+    border-color: transparent;
+    color: white;
+    height: 50px;
+    border-radius: 5px;
+}
+.info-quote {
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.more-details {
+    border: transparent;
+    background-color: #f5f5f5;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }

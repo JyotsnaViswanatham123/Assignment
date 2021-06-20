@@ -1,6 +1,9 @@
-<div class="row">
-    <app-side-menu class="col-4"></app-side-menu>
-    <app-products class="col-8"></app-products>
+<div class="row main-div">
+  <app-side-menu
+    (slidervalue)="getSliderValue($event)"
+    class="col-4"
+  ></app-side-menu>
+  <app-products [sliderVal]="sliderVal" class="col-8"></app-products>
 </div>
 
 <router-outlet></router-outlet>

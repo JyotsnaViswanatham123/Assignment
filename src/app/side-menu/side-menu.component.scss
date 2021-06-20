@@ -52,7 +52,7 @@ form {
     text-align: center;
     padding-right: 10px;
     padding-left: 10px;
-    background-color: $gray;
+    background-color: $bg-color;
     font-size: 14px;
     height: 41px;
     border-radius: 5px;
@@ -174,4 +174,15 @@ mat-radio-button ::ng-deep .mat-radio-inner-circle {
 
 :host ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
     background-color: $secondary !important;
+}
+
+.btn {
+    width: 100px;
+    border: 1px solid black;
+    border-radius: unset;
+}
+
+.btn-selected {
+    background: $secondary;
+    color: white;
 }

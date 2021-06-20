@@ -17,6 +17,8 @@ import { HeaterAdvantagesComponent } from "./heater-advantages/heater-advantages
 import { HeaterGuideComponent } from "./heater-guide/heater-guide.component";
 import { MatTabsModule } from "@angular/material/tabs";
 import { HttpClientModule } from "@angular/common/http";
+import { MatDialogModule } from "@angular/material/dialog";
+import { ProductDialogComponent } from "./product-dialog/product-dialog.component";
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { HttpClientModule } from "@angular/common/http";
     ProductsListComponent,
     HeaterAdvantagesComponent,
     HeaterGuideComponent,
+    ProductDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,8 +41,10 @@ import { HttpClientModule } from "@angular/common/http";
     MatRadioModule,
     MatTabsModule,
     HttpClientModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [ProductDialogComponent],
 })
 export class AppModule {}

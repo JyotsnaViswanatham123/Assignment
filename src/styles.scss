@@ -1,26 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
-$primary: #00664F;
-$secondary: #F5A54C;
-$red: #DD2200;
-$bg-color: #EEEEEE;
+$primary: #00664f;
+$secondary: #f5a54c;
+$red: #dd2200;
+$bg-color: #eeeeee;
 $gray: #666666;
 $lightgray: #656565;
-$lightorange: #F5A54C;
+$lightorange: #f5a54c;
 
 .primary-color {
-    color:$primary;
+    color: $primary;
 }
 
 .secondary-color {
-    color:$secondary;
+    color: $secondary;
 }
 
 .bg-white {
     background-color: #fff;
 }
 
-.bg-color {
+.bg-color-gray {
     background-color: $bg-color;
+}
+
+.bg-green {
+    background-color: $primary !important;
 }
 
 .info-icon {
@@ -28,5 +32,14 @@ $lightorange: #F5A54C;
     padding-left: 5px;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.main-div {
+    height: 100%;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

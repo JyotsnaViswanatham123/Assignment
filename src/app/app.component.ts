@@ -6,5 +6,10 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
+  public sliderVal: Number;
   title = "waterHeaterEcommerceSite";
+
+  getSliderValue($event) {
+    this.sliderVal = $event;
+  }
 }

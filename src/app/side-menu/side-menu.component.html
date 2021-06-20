@@ -16,13 +16,13 @@
         </mat-select>
       </div>
       <div class="col-1 search-icon">
-        <img src="../../assets/search-bar.svg" />
+        <img src="/assets/search-bar.svg" />
       </div>
     </div>
     <div class="margin-top form-group">
       <label for="heater-size">Size your water heater</label>
       <div class="info-icon">
-        <img src="../../assets/info-tooltip.svg" />
+        <img src="/assets/info-tooltip.svg" />
       </div>
       <div class="row slider-div">
         <div class="div-slider col-9">
@@ -32,7 +32,8 @@
             [(ngModel)]="sliderVal"
             min="30"
             max="80"
-            step="10"
+            step="5"
+            (input)="getSliderValue($event)"
           ></mat-slider>
         </div>
         <div class="col-3 gallons-info">
@@ -51,11 +52,36 @@
         <mat-option value="Natural Gas">Natural Gas</mat-option>
       </mat-select>
     </div>
-    <div class="form-group margin-top">
+    <div class="form-group margin-top col d-flex justify-content-left">
+      <button
+        (click)="processRadio('yes')"
+        [ngClass]="{ 'btn-selected': yesSelected }"
+        class="btn"
+      >
+        No
+      </button>
+      <button
+        (click)="processRadio('no')"
+        [ngClass]="{ 'btn-selected': noSelected }"
+        class="btn"
+      >
+        Yes
+      </button>
+      <mat-radio-group hidden aria-label="Select an option">
+        <mat-radio-button [checked]="yesSelected" value="1"
+          >Option 1</mat-radio-button
+        >
+        <mat-radio-button [checked]="noSelected" value="2"
+          >Option 2</mat-radio-button
+        >
+      </mat-radio-group>
+    </div>
+
+    <!-- <div class="form-group margin-top">
       <mat-radio-group aria-label="Select an option">
         <mat-radio-button value="1">yes</mat-radio-button>
         <mat-radio-button value="2">no</mat-radio-button>
       </mat-radio-group>
-    </div>
+    </div> -->
   </div>
 </form>

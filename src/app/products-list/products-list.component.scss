@@ -7,7 +7,7 @@
 }
 
 .tag-img {
-    height: 20px;
+    height: 25px;
     display: inline-block;
     color: white;
     padding-bottom: 2px;
@@ -20,7 +20,8 @@
 
 .info-header {
     padding-top: 2%;
-    border-bottom: 2px solid black;
+    padding-bottom: 1%;
+    border-bottom: 2px solid $lightgray;
 }
 
 .info-icon {
@@ -41,6 +42,7 @@
 
 .product-details-div {
     text-align: center;
+    padding-top: 1%;
 }
 
 .description-1 {
@@ -49,7 +51,7 @@
 }
 
 .img-1 {
-    width: 95%;
+    width: 70%;
 }
 
 .product-heading {
@@ -111,10 +113,27 @@
     background-color: white;
 }
 
-hr {
+.hr-bot {
+    border-top: 2px dashed $gray;
+    background-color: white;
+    margin-top: 7px;
+}
+
+// .cust-hr {
+//     border-top: 2px strong $gray;
+// }
+
+.custom-hr {
+    margin-top: 10px;
     border-top: 2px dashed $gray;
     background-color: white;
 }
+
+.hr {
+    background-color: white;
+    padding-right: 4%;
+    padding-left: 4%;
+} 
 
 .price {
     padding-right: 0;
@@ -122,6 +141,11 @@ hr {
 }
 
 .dashed-line {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.incentives-div {
     padding-right: 0;
 }
 
@@ -132,10 +156,18 @@ hr {
 .installation-text {
     text-align: left;
     color: $lightgray;
-    padding-left: 4%;
+    padding-left: 5%;
     font-size: 12px;
 }
 
+.more-options {
+    border: 1px solid blue;
+    color: blue;
+}
+
+.more-options-div {
+    padding: 2%;
+}
 .inst-text {
     background-color: white;
 }
@@ -150,10 +182,7 @@ hr {
     padding-left: 5%;
 }
 
-.img-info {
-    display: inline-block;
-    padding-left: 4px;
-}
+
 
 .incentives-amount {
     padding-right: 20%;
@@ -197,4 +226,10 @@ hr {
     background-color: #f5f5f5;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    height: 30px;
+    color: blue;
+}
+
+.product-list-heading {
+    font-size: 20px;
 }

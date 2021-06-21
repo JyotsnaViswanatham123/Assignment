@@ -1,31 +1,31 @@
-<form>
-  <div class="container">
+<form class="heater-form">
+  <div class="container side-menu">
     <h4 class="margin-top primary-color main-heading">
       Tell us About Your Project
     </h4>
     <div class="margin-top row location-type-div">
       <label for="location">Location</label>
-      <div class="form-group col-7 location-div">
-        <input class="location form-control" id="location" type="text" />
+      <div class="form-group location-div">
+        <input class="location form-control border-radius-left" id="location" type="text" />
       </div>
-      <div class="form-group col-4 family-type-div">
-        <mat-select class="family-type" [(value)]="familyType">
+      <div class="form-group family-type-div">
+        <mat-select class="family-type border-radius-right" [(value)]="familyType">
           <mat-option value="Single-Family">Single-Family</mat-option>
           <mat-option value="Large-Family">Large-Family</mat-option>
           <mat-option value="Joint-Family">Joint-Family</mat-option>
         </mat-select>
       </div>
-      <div class="col-1 search-icon">
-        <img src="/assets/search-bar.svg" />
+      <div class="search-icon">
+        <img src="./assets/search-bar.svg" />
       </div>
     </div>
     <div class="margin-top form-group">
       <label for="heater-size">Size your water heater</label>
       <div class="info-icon">
-        <img src="/assets/info-tooltip.svg" />
+        <img class="info-icon-img" src="./assets/info-tooltip-light.svg" />
       </div>
       <div class="row slider-div">
-        <div class="div-slider col-9">
+        <div class="div-slider col-7">
           <mat-slider
             name="slider"
             class="slider"
@@ -36,7 +36,7 @@
             (input)="getSliderValue($event)"
           ></mat-slider>
         </div>
-        <div class="col-3 gallons-info">
+        <div class="col-5 gallons-info">
           <p class="gallon-text abc">{{ sliderVal }} Gallons</p>
           <p *ngIf="sliderVal <= 50" class="gallon-text">(3-5 people)</p>
           <p *ngIf="sliderVal > 50 && sliderVal <= 60" class="gallon-text">
@@ -52,18 +52,23 @@
         <mat-option value="Natural Gas">Natural Gas</mat-option>
       </mat-select>
     </div>
-    <div class="form-group margin-top col d-flex justify-content-left">
-      <button
+    <div class="form-group margin-top">
+      <label>Is this a water heater emergency?</label>
+      <div class="info-icon">
+        <img class="info-icon-img" src="./assets/info-tooltip-light.svg" />
+      </div>
+      <div>
+        <button
         (click)="processRadio('yes')"
-        [ngClass]="{ 'btn-selected': yesSelected }"
-        class="btn"
+        [ngClass]="{ 'btn-selected': noSelected }"
+        class="border-radius-left btn-no btn emergency"
       >
         No
       </button>
       <button
         (click)="processRadio('no')"
-        [ngClass]="{ 'btn-selected': noSelected }"
-        class="btn"
+        [ngClass]="{ 'btn-selected': yesSelected }"
+        class="border-radius-right btn emergency"
       >
         Yes
       </button>
@@ -75,6 +80,8 @@
           >Option 2</mat-radio-button
         >
       </mat-radio-group>
+      </div>
+     
     </div>
 
     <!-- <div class="form-group margin-top">

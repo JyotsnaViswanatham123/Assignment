@@ -9,19 +9,18 @@ import { MatSliderChange } from "@angular/material/slider";
 export class SideMenuComponent implements OnInit {
   @Output() slidervalue = new EventEmitter();
 
-  public sliderVal: any;
+  public sliderVal: Number = 50;
   public familyType: String;
   public fuelType: String;
   constructor() {}
 
   ngOnInit() {
-    this.sliderVal = 50;
     this.familyType = "Single-Family";
     this.fuelType = "Natural Gas";
   }
 
   yesSelected: boolean = false;
-  noSelected: boolean = false;
+  noSelected: boolean = true;
   processRadio(actionType) {
     if (actionType === "yes") {
       this.yesSelected = true;

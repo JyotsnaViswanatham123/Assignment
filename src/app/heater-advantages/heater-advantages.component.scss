@@ -1,18 +1,29 @@
 @import "../../styles.scss";
 
-.heater-advantages {
-    display: inline-block;
-}
-
-.advantage-heading {
-    display: inline-block;
-}
-
 .description {
     padding-right: 33%;
 }
 
 .advantages-info {
-    border-bottom: 2px solid $lightgray;
+    border-bottom: 1px solid $lightgray;
     padding-bottom: 2%;
 }
+
+.prod-advantages {
+    padding-left: 0px;
+    padding-right: 0px;
+    color: $lightgray;
+}
+
+.inf-img {
+    padding-left: 35%;
+}
+
+.adv-heading {
+    padding-bottom: 1%;
+}
+
+hr {
+    background-color: white;
+}
+

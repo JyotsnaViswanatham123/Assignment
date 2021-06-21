@@ -9,43 +9,59 @@ form {
 }
 .location-div {
     padding-right: 0;
+    width: 50%;
 }
 
 .family-type-div {
     padding-left: 0;
     padding-right: 5px;
+    width: 40%;
 }
 
 .location {
-    border-radius: 10px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border: 2px solid $bg-color;
+    border: 2px solid $lightgray;
     border-right: 0px;
 }
 
+label {
+    padding-bottom: 3px;
+}
+
+.div-slider {
+    border-right: 1px solid $lightgray;
+}
+
 .family-type {
-    border-radius: 10px;
-    border: 2px solid $bg-color;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border: 2px solid $lightgray;
     height: 100%;
 }
 .search-icon {
     background-color: $secondary;
     padding-top: 7px;
     border-radius: 10px;
+    padding-left: 2%;
+    width: 10%;
 }
 .slider-div {
-    border: 2px solid $bg-color;
+    border: 2px solid $lightgray;
     border-radius: 10px;
     margin-left: 2px;
     margin-right: 0;
     height: 45px;
 }
 
+.emergency {
+    width:  140px !important;
+    height: 50px;;
+}
+
 .gallon-text {
     margin-bottom: 0;
+}
+
+.side-menu {
+    padding-right: 10px;
+    color: $lightgray;
 }
 
 .gallons-info {
@@ -55,9 +71,9 @@ form {
     background-color: $bg-color;
     font-size: 14px;
     height: 41px;
-    border-radius: 5px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-radius: 10px !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
 }
 
 .gallon-text {
@@ -68,7 +84,8 @@ form {
 }
 
 .main-heading {
-    border-bottom: 2px solid $bg-color;
+    border-bottom: 1px solid $lightgray;
+    padding-bottom: 5px;
 }
 
 .location-type-div {
@@ -78,7 +95,7 @@ form {
 .fuel-type {
     width: 50%;
     border-radius: 10px;
-    border: 2px solid $bg-color;
+    border: 2px solid $lightgray;
     height: 40px;
 }
 
@@ -111,7 +128,7 @@ mat-slider ::ng-deep .mat-slider-wrapper ::ng-deep .mat-slider-track-wrapper {
 
 mat-slider ::ng-deep .mat-slider-wrapper ::ng-deep .mat-slider-track-wrapper ::ng-deep .mat-slider-track-background {
     height: 10px;
-    background-color: $gray;
+    background-color: $bg-color;
 }
 
 mat-slider ::ng-deep .mat-slider-wrapper ::ng-deep .mat-slider-track-wrapper ::ng-deep .mat-slider-track-fill {
@@ -185,4 +202,23 @@ mat-radio-button ::ng-deep .mat-radio-inner-circle {
 .btn-selected {
     background: $secondary;
     color: white;
+}
+
+.btn-no {
+    border-right: 0;
+}
+
+.info-icon-img {
+    height: 15px;
+}
+
+::ng-deep .mat-select-value {
+    color: $lightgray;
+    text-align: left !important;
+    padding-left: 5%;
+} 
+
+.heater-form {
+    border-bottom: 1px solid $lightgray;
+    padding-bottom: 25px;
 }

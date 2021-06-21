@@ -1,25 +1,24 @@
 <div class="bg-green heading-div">
-  <h5 class="product-list-heading">
-    Your project qualifies you for <b>incentives!</b>
-  </h5>
   <img
     class="tag-img"
-    src="/assets/Searching applicable rebates and incentives.svg"
+    src="./assets/Searching applicable rebates and incentives.svg"
   />
+  <p class="product-list-heading mb-0">
+    Your project qualifies you for <b>incentives!</b>
+  </p>
+  
 </div>
-<div class="container">
+<div *ngIf="!errorText" class="container">
   <h5 class="primary-color info-header">
     Your Hybrid Electric Water Heater Recommended Options
   </h5>
 </div>
-<div *ngIf="!productsToBeDisplayed">
-  <h4>No Products to display</h4>
-</div>
-<div *ngIf="productsToBeDisplayed" class="product-details-div">
+<div *ngIf="!errorText" class="product-details-div">
   <div
     class="product-details"
     *ngFor="let eachProduct of productsToBeDisplayed"
   >
+    
     <div class="row product-heading">
       <div class="manufacture-info col-8">
         <h5 class="manufacturer-name">{{ eachProduct.manufacturer_name }}</h5>
@@ -28,22 +27,22 @@
       <div class="col-4 heading-info">
         <p class="decimal-val">3.4 ef</p>
         <div class="info-icon">
-          <img class="info-img" src="/assets/info-tooltip-light.svg" />
+          <img class="info-img" src="./assets/info-tooltip-light.svg" />
         </div>
-        <img class="logo" src="/assets/Energy_Star_logo.svg.png" />
+        <img class="logo" src="./assets/Energy_Star_logo.svg.png" />
       </div>
     </div>
     <div class="product-description">
       <div class="row description-1">
         <div class="col-4">
-          <img class="img-1" src="/assets/img1" />
+          <img class="img-1" src="{{ eachProduct.img}}" />
         </div>
         <div class="col-8">
           <div class="row">
             <div class="col-2 bullet">
               <img
                 class="bullet-cicle"
-                src="/assets/circle-doodle-svgrepo-com.svg"
+                src="./assets/circle-doodle-svgrepo-com.svg"
               />
             </div>
             <div class="col-10 bullet-text">
@@ -54,7 +53,7 @@
             <div class="col-2 bullet">
               <img
                 class="bullet-cicle"
-                src="/assets/circle-doodle-svgrepo-com.svg"
+                src="./assets/circle-doodle-svgrepo-com.svg"
               />
             </div>
             <div class="col-10 bullet-text">
@@ -65,7 +64,7 @@
             <div class="col-2 bullet">
               <img
                 class="bullet-cicle"
-                src="/assets/circle-doodle-svgrepo-com.svg"
+                src="./assets/circle-doodle-svgrepo-com.svg"
               />
             </div>
             <div class="col-10 bullet-text">
@@ -76,46 +75,50 @@
             <div class="col-2 bullet">
               <img
                 class="bullet-cicle"
-                src="/assets/circle-doodle-svgrepo-com.svg"
+                src="./assets/circle-doodle-svgrepo-com.svg"
               />
             </div>
             <div class="col-10 bullet-text">
               <p>10 year manufacturer warranty</p>
             </div>
           </div>
-
-          <!-- <img src="../../assets/circle-outline-shape-svgrepo-com.svg" /> -->
         </div>
       </div>
+    </div>
+    <div>
+      <div class="row hr">
+        <hr class="cust-hr"/>
+      </div>
+      
     </div>
     <div class="pricing-details">
       <div class="base-price row">
         <div class="price col-3">
-          <h6>Base Price</h6>
+          <h6 class="mb-0">Base Price</h6>
         </div>
-        <div class="dashed-line col-5">
-          <hr />
+        <div class="dashed-line col-6">
+          <hr class="mt-7 mb-0 hr-bot"/>
         </div>
-        <div class="price-value col-4">
-          <h6>{{ eachProduct.base_price | currency }}</h6>
+        <div class="price-value col-3">
+          <h6 class="mb-0">{{ eachProduct.base_price | currency }}</h6>
         </div>
       </div>
       <div class="row inst-text">
-        <p class="installation-text">(Installation not included)</p>
+        <p class="installation-text mb-0">(Installation not included)</p>
       </div>
 
       <div class="incentives row">
-        <div class="col-6">
-          <p class="incentives-text">Available incentives</p>
+        <div class="col-6 incentives-div">
+          <p class="incentives-text mb-0">Available incentives</p>
           <div class="img-info">
-            <img class="info-img" src="/assets/info-tooltip-light.svg" />
+            <img class="info-img" src="./assets/info-tooltip-light.svg" />
           </div>
         </div>
         <div class="dashed-line col-3">
-          <hr />
+          <hr class="mb-0 custom-hr"/>
         </div>
         <div class="col-3">
-          <p class="incentives-amount">
+          <p class="mb-0 incentives-amount">
             {{ eachProduct.incentives.totalAppliedIncentives | currency }}
           </p>
         </div>
@@ -124,11 +127,11 @@
         <div class="col-5">
           <h6 class="equipment-text">Equipment Cost</h6>
           <div class="img-info">
-            <img class="info-img" src="/assets/info-tooltip-light.svg" />
+            <img class="info-img" src="./assets/info-tooltip-light.svg" />
           </div>
         </div>
         <div class="dashed-line col-3">
-          <hr />
+          <hr class="mb-0 custom-hr"/>
         </div>
         <div class="col-4 secondary-color">
           <p>{{ eachProduct.netCost | currency }}</p>
@@ -142,7 +145,7 @@
               }}</span>
             </p>
             <div class="img-info">
-              <img class="info-img" src="/assets/info-tooltip-light.svg" />
+              <img class="info-img mb-1" src="./assets/info-tooltip-light.svg" />
             </div>
           </div>
         </div>
@@ -158,4 +161,12 @@
       </div>
     </div>
   </div>
+</div>
+<div *ngIf="errorText">
+  <h4 class="error-msg">
+    {{ errorText }}
+  </h4>
+</div>
+<div class="more-options-div">
+  <button class="btn more-options">See More Options</button>
 </div>

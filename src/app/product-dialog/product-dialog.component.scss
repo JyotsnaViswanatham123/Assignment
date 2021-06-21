@@ -1,0 +1,316 @@
+@import "../../styles.scss";
+
+.perfomance-badge {
+    text-align: left;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 16px;
+}
+
+.previous-next-btns {
+    display: inline-block;
+    text-align: right;
+}
+
+// .md-dialog-container {
+//     // background-color: #000;
+//     width: 250px;
+//     height: 250px;
+// }
+
+.dialog-box {
+    background-color: $bg-color;
+}
+
+.previous-btn,
+.next-btn {
+    border: 1px solid gray;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.prev-btn-div {
+    display: inline-block;
+    width: 75px;
+    height: 100%;
+}
+
+.next-btn-div {
+    display: inline-block;
+    width: 75px;
+    height: 100%;
+}
+
+mat-dialog-container {
+    padding: 0 !important;
+}
+
+// .dialog-container-custom {
+//     .mat-dialog-container {
+//         // padding: 0;
+//         background-color: grey !important;
+//         // width: 100%;
+//     }
+// }
+
+::ng-deep .mat-dialog-container {
+    // padding: 0;
+    background-color: $bg-color !important;
+    // width: 100%;
+    overflow-y: hidden;
+}
+
+// .cdk-global-overlay-wrapper {
+//     justify-content: center !important;
+// }
+
+.dialog-container-custom {
+    background-color: gray !important;
+}
+
+.my-panel .mat-dialog-container {
+    overflow: hidden;
+    border-radius: 25px;
+    padding: 50px;
+}
+.mat-dialog-content {
+    max-height: 100%;
+}
+
+.arrow-left {
+    display: inline-block;
+    background-color: $secondary;
+    height: 100%;
+    // margin-bottom:  4px;
+}
+
+.arrow-right {
+    display: inline-block;
+    background-color: $secondary;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    height: 100%;
+}
+.detail {
+    margin-bottom: 0;
+}
+.arrow-left-img, .arrow-right-img {
+    height: 108%;
+    padding: 6px;
+    // margin-bottom: 5px;
+    // margin-top: 1px;
+}
+
+.dialog-heading {
+    border-bottom: 1px solid $lightgray;
+    padding-bottom: 1%;
+}
+
+.disabled-btn {
+    background-color: #FFD68A;
+}
+.img-bg {
+    background-color: white;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.product-img {
+    width: 25%;
+}
+
+.details {
+    padding: 2%;
+}
+
+.select-img-div {
+    background: white;
+    text-align: center;
+    height: 500px;
+}
+
+.current-product-img {
+    width: 40%;
+}
+ul li::marker {
+    color: $primary;
+    font-size: 25px;
+}
+
+.details-prod {
+    padding: 3%;
+}
+
+.name {
+    color: $lightgray;
+}
+
+.strikethrough {
+    position: relative;
+  }
+  .strikethrough:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 3px solid;
+    border-color: $red;
+  
+    -webkit-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+  }
+
+  .base-price {
+    display: inline-block;
+    padding: 15px;
+    border-right: 1px solid $gray;
+    padding-top: 30px;
+  }
+
+  .net-cost {
+      display: inline-block;
+      padding: 15px;
+  }
+
+  .incentives-applied {
+      font-size: 12px;
+      color: $lightgray;
+  }
+
+  .price-padding{
+      padding-left: 3px;
+  }
+
+  .net {
+    margin-bottom: 0;
+  }
+
+  .install-quote {
+      background-color: $secondary;
+      color: white;
+      width: 230px;
+  }
+
+  hr {
+    border-top: 2px dashed $gray;
+    background-color: white;
+}
+
+  .bottom-btns-2 {
+      color: blue;
+      padding-left: 5%;
+  }
+
+//   .bottom-btns-1 {
+//       width: 60%;
+//   }
+
+  .bottom-btns {
+      padding-top: 2%;
+  }
+
+.logo  {
+    float: right;
+}
+
+.inf-icon {
+    display: inline-block;
+    padding-left: 5%;
+}
+
+
+.inf-img {
+    height: 12px;
+}
+
+.bullet-points {
+    border: 1px solid $gray;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.bullet-heading {
+    color: white;
+    display: inline-block;
+}
+
+.tick-img {
+    display: inline-block;
+    padding-right: 1%;
+}
+
+.bullet-p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.bullet-p-body {
+    padding: 2%;
+    margin-bottom: 0;
+    font-size: 14px;
+    height: 100px;
+}
+
+::ng-deep .mat-tab-body-content {
+    overflow-x: hidden;
+}
+
+.line1 {
+    padding-right: 0;
+}
+
+.annual-est {
+    border: 2px solid $primary;
+    padding: 4%;
+    border-radius: 5px;
+    color: black;
+
+}
+
+.annual-est-text {
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.installation-text {
+    font-size: 12px;
+}
+
+.width-24 {
+    width: 24%;
+}
+
+.width-38 {
+    width: 38%;
+}
+
+.price-details {
+    border-left: 1px solid $gray;
+}
+
+.details-block {
+    padding-left: 3%;
+}
+
+.base-price1 {
+    color: $gray;
+} 
+
+.overview {
+    background-color: white;
+    padding-bottom: 2%;
+}
+
+::ng-deep .mat-ink-bar {
+    background-color: $primary !important;
+}
+
+.terms {
+    padding-top: 2%;
+}

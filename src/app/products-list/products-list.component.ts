@@ -1,10 +1,5 @@
-import { ApiService } from "./../api.service";
-import { Component, OnInit, Input, DoCheck, SimpleChange } from "@angular/core";
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from "@angular/material/dialog";
+import { Component, OnInit, Input, SimpleChange } from "@angular/core";
+import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
 import { ProductDialogComponent } from "../product-dialog/product-dialog.component";
 
 @Component({
@@ -17,52 +12,76 @@ export class ProductsListComponent implements OnInit {
   public productsData: any;
   public data: any;
   public productsToBeDisplayed: any = [];
-  constructor(private apiService: ApiService, private dialog: MatDialog) {}
+  public errorText: String = "";
+  public images = [
+    './assets/img1',
+    './assets/img2.png',
+    './assets/img3.png'
+  ];
+
+  constructor(private dialog: MatDialog) {}
   ngOnChanges(changes: { [propName: string]: SimpleChange }) {
     if (
       changes["sliderVal"] &&
       changes["sliderVal"].previousValue != changes["sliderVal"].currentValue
     ) {
-      console.log("Slider value changed" + this.sliderVal);
+      this.productsToBeDisplayed = [];
+      for (let eachProduct of this.productsData) {
+        if (eachProduct.volume == this.sliderVal) {
+          this.productsToBeDisplayed.push(eachProduct);
+        }
+      }
+      if (!this.productsToBeDisplayed.length) {
+        this.errorText =
+          "Oops! No Products found for the selected volume. Please try again later or checkout other items";
+      } else {
+        this.errorText = "";
+      }
     }
   }
 
   ngOnInit() {
-    this.data = this.apiService.makeARequest(
-      "https://6051b8b8fb49dc00175b6997.mockapi.io/api/products",
-      {}
-    );
-    this.productsData = this.data["quotes"]["product_quotes"];
-    // .subscribe((data) => {
-    //   console.log("****************");
-    //   console.log(data["name"]);
-    //   console.log("**********");
-    // });
-    if (!this.sliderVal) {
-      this.sliderVal = 40;
-    }
-    console.log("SSSSSSSSSSSSSS");
-    console.log(this.sliderVal);
-    console.log("JJJJJJJJ");
-    console.log(this.productsData);
-    console.log("lllllllllllllll");
-    for (let eachProduct of this.productsData) {
-      console.log(eachProduct.volume);
-      // console.log(this.sliderVal);
-      if (eachProduct.volume == this.sliderVal) {
-        console.log("Inside");
-        this.productsToBeDisplayed.push(eachProduct);
-      }
-    }
-    // console.log(this.productsToBeDisplayed);
+    fetch("https://6051b8b8fb49dc00175b6997.mockapi.io/api/products", {
+      method: "post",
+      body: "",
+    }).then(response => response.json())
+      .then(data => {
+        if ( data['data']["quotes"]["product_quotes"]) {
+          this.productsData = data['data']["quotes"]["product_quotes"];
+          if (!this.sliderVal) {
+            this.sliderVal = 50;
+          }
+          if (!this.productsData) {
+            this.errorText =
+              "Oops! No Products found at the moment. Please try again later";
+          }
+          for (let eachProduct of this.productsData) {
+            eachProduct.img =  this.images[Math.floor(Math.random()*(2-0+1)+0)];
+            if (eachProduct.volume == this.sliderVal) {
+              this.productsToBeDisplayed.push(eachProduct);
+            }
+          }
+          if (!this.productsToBeDisplayed) {
+            this.errorText =
+              "Oops! No Products found for the selected volume. Please try again later or checkout other items";
+          }
+        } else {
+          this.errorText =
+              "Oops! No Products found at the moment. Please try again later";
+        }
+        
+    });    
   }
 
   openDialog(modelId) {
-    this.dialog.open(ProductDialogComponent, {
-      data: {
-        current_model_id: modelId,
-        products: this.productsToBeDisplayed,
-      },
-    });
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.width = "99%";
+    dialogConfig.height = "100%";
+    dialogConfig.data = {
+      current_model_id: modelId,
+      products: this.productsToBeDisplayed,
+    };
+    this.dialog.open(ProductDialogComponent, dialogConfig);
   }
 }

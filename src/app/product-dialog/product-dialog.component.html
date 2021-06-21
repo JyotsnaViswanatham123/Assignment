@@ -1,4 +1,399 @@
 <!-- <p>{{ data.model_id }}</p> -->
-<button (click)="getPrevious(currentProductDetails.index)">previous</button>
-<button (click)="getNext(currentProductDetails.index)">next</button>
-<p>{{ currentProductDetails | json }}</p>
+<!-- <p>{{ currentProductDetails | json }}</p> -->
+
+<mat-dialog-content class="font-color">
+  <div class="dialog-box">
+      <div class="row dialog-heading">
+        <div class="col-6 perfomance-badge">
+              Heat Pump Electric Water Heater > <b>Reem Performance Platinum 50</b>
+          </div>
+          <div class="col-6 previous-next-btns">
+            <div (click)="getPrevious(currentProductDetails.index)" class="arrow-left">
+                <img class="arrow-left-img" [ngClass] = "previousButtonDisabled ? 'disabled-btn' : ''" src="./assets/iconmonstr-arrow-64.svg"/>
+            </div>
+            <div class="prev-btn-div">
+              <button class="previous-btn" [disabled]="previousButtonDisabled" (click)="getPrevious(currentProductDetails.index)">Previous</button>
+            </div>
+            <div class="next-btn-div">
+              <button class="next-btn" [disabled]="nextButtonDisabled" (click)="getNext(currentProductDetails.index)">Next</button>
+            </div>
+            <div (click)="getNext(currentProductDetails.index)" [ngClass] = "nextButtonDisabled ? 'disabled-btn' : ''" class="arrow-right">
+                <img class="arrow-right-img" src="./assets/iconmonstr-arrow-64.svg"/>
+            </div>
+          </div>
+      </div>
+      <div class="row details">
+        <div class="col-1">
+            <div class="img-bg" (click)="openImg(currentProductDetails.img)">
+                <img class="product-img" src="{{ currentProductDetails.img }}"/>
+            </div>
+            <div class="img-bg" (click)="openImg('./assets/img2.png')" *ngIf="currentProductDetails.img == './assets/img1'">
+                <img class="product-img" src="./assets/img2.png"/>
+            </div>
+            <div class="img-bg" (click)="openImg('./assets/img3.png')" *ngIf="currentProductDetails.img == './assets/img1'">
+                <img class="product-img" src="./assets/img3.png"/>
+            </div>
+            <div class="img-bg" (click)="openImg('./assets/img1')" *ngIf="currentProductDetails.img == './assets/img2.png'">
+                <img class="product-img" src="./assets/img1"/>
+            </div>
+            <div class="img-bg" (click)="openImg('./assets/img3.png')" *ngIf="currentProductDetails.img == './assets/img2.png'">
+                <img class="product-img" src="./assets/img3.png"/>
+            </div>
+            <div class="img-bg" (click)="openImg('./assets/img1')" *ngIf="currentProductDetails.img == './assets/img3.png'">
+                <img class="product-img" src="./assets/img1"/>
+            </div>
+            <div class="img-bg" (click)="openImg('./assets/img2.png')" *ngIf="currentProductDetails.img == './assets/img3.png'">
+                <img class="product-img" src="./assets/img2.png"/>
+            </div>
+        </div>
+        <div class="col-11">
+            <div class="row">
+                <div class="select-img-div col-4">
+                    <img class="current-product-img" [src]="currentImgSrc"/>
+                </div>
+                <div class="col-8 details-prod">
+                    <div class="inline-block">
+                        <h2>{{ currentProductDetails.manufacturer_name }}</h2>
+                        <h4 class="name"> {{ currentProductDetails.name }} </h4>
+                        <p>X12345RTYF</p>
+                    </div>
+                    <div class="logo">
+                        <div>
+                            <img src="./assets/Energy_Star_logo.svg.png"/>
+                        </div>
+                        <div>
+                            <div class="inline-block">
+                                <p>3.4 ef</p>
+                            </div>
+                            <div class=inf-icon>
+                                <img class="inf-img" src="../../assets/info-tooltip-light.svg"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div *ngFor="let text of currentProductDetails.detail_highlight">
+                        <ul class="detail">
+                            <li> {{ text }}</li>
+                        </ul>
+                    </div>
+                    <div class="base-price">
+                        <div class='d-flex justify-content-left strikethrough'>
+                            <h6>$</h6><h4 class="mb-0"><em>{{ currentProductDetails.base_price }}</em></h4><h6 class="price-padding">00</h6>
+                       </div>
+                        <!-- <h3 class="strikethrough">{{ currentProductDetails.base_price | currency }}</h3> -->
+                    </div>
+                    <div class="net-cost">
+                        <div class='d-flex justify-content-left primary-color net'>
+                            <h6>$</h6><h4 class="mb-0"><em>{{ currentProductDetails.netCost }}</em></h4><h6 class="price-padding">00</h6>
+                       </div>
+                        <!-- <h3 class="primary-color net">{{ currentProductDetails.netCost | currency }}</h3> -->
+                        <p class="incentives-applied">*With all incentives applied</p>
+                    </div>
+                    <div class="bottom-btns">
+                        <div class="bottom-btns-1 inline-block">
+                            <button class="quote-btn install-quote">Get Install Quote</button>
+                        </div>
+                        <div class="bottom-btns-2 inline-block" mat-dialog-close>
+                           Back to Results
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row overview">
+                <mat-tab-group>
+                    <mat-tab label="Product Overview">
+                        <p>
+                            Accelera heat pump water heaters save up to 80% of hot water costs because they extract heat to make 
+                            hot water from energy in the air. The heat pump draws less energy than a toaster while it is running 
+                            and making hot water. In warm climates, Accelera can be placed in a garage, where it uses the heat from
+                            the outside air; or inside the house, where it helps with air conditioning.
+                        </p>
+                        <div class="row">
+                            <div class="width-38">
+                                <div class="bullet-points" *ngFor = "let desc of productBulletBlock1">
+                                    <div class="bg-green">
+                                        <div class="tick-img">
+                                            <img src="./assets/right-check.svg"/>
+                                        </div>
+                                        <div class="bullet-heading">
+                                            <p class="bullet-p">{{ desc.product_bullet }}</p>
+                                        </div>
+                                    </div>                                    
+                                    <div>
+                                        <p class="bullet-p-body">{{ desc.product_block }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="width-38">
+                                <div class="bullet-points" *ngFor = "let desc of productBulletBlock2">
+                                    <div class="bg-green">
+                                        <div class="tick-img">
+                                            <img src="./assets/right-check.svg"/>
+                                        </div>
+                                        <div class="bullet-heading">
+                                            <p class="bullet-p">{{ desc.product_bullet }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="bullet-p-body">{{ desc.product_block }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="width-24 price-details">
+                                <div class="row base-price1 font-size-14">
+                                    <div class="col-4 line1 inline-block">   
+                                        <h6 class="mb-0">Base Price</h6>
+                                    </div>
+                                    <div class="col-4 dashed-line line1 inline-block">
+                                        <hr />
+                                    </div>
+                                    <div class="col-4 line1 inline-block">
+                                        <p class="mb-0">{{ currentProductDetails.base_price  | currency:'USD':'symbol':'3.0' }}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="installation-text">(Installation not included)</p>
+                                </div>
+                                <div class="details-block font-size-12">
+                                    <div class="row">
+                                        <div class="col-5 line1 inline-block">   
+                                            <div class="inline-block">
+                                                <p class="mb-0">Federal Tax Credit</p>
+                                            </div>
+                                            <div class="info-icon">
+                                                <img src="./assets/info-tooltip-light.svg"/>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-3 dashed-line line1 inline-block">
+                                            <hr />
+                                        </div>
+                                        <div class="col-4 line1 inline-block">
+                                            <p class="mb-0">$0</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 line1 inline-block">   
+                                            <div class="inline-block">
+                                                <p class="mb-0">Federal Tax Credit</p>
+                                            </div>
+                                            <div class="info-icon">
+                                                <img src="./assets/info-tooltip-light.svg"/>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-3 dashed-line line1 inline-block">
+                                            <hr />
+                                        </div>
+                                        <div class="col-4 line1 inline-block">
+                                            <p class="mb-0">$0</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 line1 inline-block">   
+                                            <div class="inline-block">
+                                                <p class="mb-0">Utility Incentives</p>
+                                            </div>
+                                            <div class="info-icon">
+                                                <img src="./assets/info-tooltip-light.svg"/>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-3 dashed-line line1 inline-block">
+                                            <hr />
+                                        </div>
+                                        <div class="col-4 line1 inline-block">
+                                            <p class="mb-0">{{ currentProductDetails.incentives.totalAppliedIncentives  | currency:'USD' }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row base-price1 font-size-14">
+                                    <div class="col-6 line1">
+                                        <div class="inline-block">   
+                                            <h6 class="mb-0">Equipment Cost</h6>
+                                        </div>
+                                        <div class="info-icon">
+                                            <img src="./assets/info-tooltip-light.svg"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 dashed-line line1 inline-block">
+                                        <hr />
+                                    </div>
+                                    <div class="col-4 line1 inline-block">
+                                        <p class="mb-0">{{ currentProductDetails.netCost  | currency:'USD':'symbol':'3.0' }}</p>
+                                    </div>
+                                </div>
+                                <div class="annual-est">
+                                    <p class="annual-est-text">
+                                      Your Est. Annual Savings is
+                                      <span class="primary-color">{{
+                                        currentProductDetails.est_annual_savings_cal | currency
+                                      }}</span>
+                                    </p>
+                                    <div class="img-info">
+                                      <img class="info-img mb-1" src="./assets/info-tooltip-light.svg" />
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Product Specs"> 
+                        <p>
+                            Accelera heat pump water heaters save up to 80% of hot water costs because they extract heat to make 
+                            hot water from energy in the air. The heat pump draws less energy than a toaster while it is running 
+                            and making hot water. In warm climates, Accelera can be placed in a garage, where it uses the heat from
+                            the outside air; or inside the house, where it helps with air conditioning.
+                        </p>
+                        <div class="row">
+                            <div class="width-38">
+                                <div class="bullet-points" *ngFor = "let desc of productBulletBlock1">
+                                    <div class="bg-green">
+                                        <div class="tick-img">
+                                            <img src="./assets/right-check.svg"/>
+                                        </div>
+                                        <div class="bullet-heading">
+                                            <p class="bullet-p">{{ desc.product_bullet }}</p>
+                                        </div>
+                                    </div>                                    
+                                    <div>
+                                        <p class="bullet-p-body">{{ desc.product_block }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="width-38">
+                                <div class="bullet-points" *ngFor = "let desc of productBulletBlock2">
+                                    <div class="bg-green">
+                                        <div class="tick-img">
+                                            <img src="./assets/right-check.svg"/>
+                                        </div>
+                                        <div class="bullet-heading">
+                                            <p class="bullet-p">{{ desc.product_bullet }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <p class="bullet-p-body">{{ desc.product_block }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="width-24 price-details">
+                                <div class="row base-price1 font-size-14">
+                                    <div class="col-4 line1 inline-block">   
+                                        <h6 class="mb-0">Base Price</h6>
+                                    </div>
+                                    <div class="col-4 dashed-line line1 inline-block">
+                                        <hr />
+                                    </div>
+                                    <div class="col-4 line1 inline-block">
+                                        <p class="mb-0">{{ currentProductDetails.base_price  | currency:'USD':'symbol':'3.0' }}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="installation-text">(Installation not included)</p>
+                                </div>
+                                <div class="details-block font-size-12">
+                                    <div class="row">
+                                        <div class="col-5 line1 inline-block">   
+                                            <div class="inline-block">
+                                                <p class="mb-0">Federal Tax Credit</p>
+                                            </div>
+                                            <div class="info-icon">
+                                                <img src="./assets/info-tooltip-light.svg"/>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-3 dashed-line line1 inline-block">
+                                            <hr />
+                                        </div>
+                                        <div class="col-4 line1 inline-block">
+                                            <p class="mb-0">$0</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 line1 inline-block">   
+                                            <div class="inline-block">
+                                                <p class="mb-0">Federal Tax Credit</p>
+                                            </div>
+                                            <div class="info-icon">
+                                                <img src="./assets/info-tooltip-light.svg"/>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-3 dashed-line line1 inline-block">
+                                            <hr />
+                                        </div>
+                                        <div class="col-4 line1 inline-block">
+                                            <p class="mb-0">$0</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5 line1 inline-block">   
+                                            <div class="inline-block">
+                                                <p class="mb-0">Utility Incentives</p>
+                                            </div>
+                                            <div class="info-icon">
+                                                <img src="./assets/info-tooltip-light.svg"/>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-3 dashed-line line1 inline-block">
+                                            <hr />
+                                        </div>
+                                        <div class="col-4 line1 inline-block">
+                                            <p class="mb-0">{{ currentProductDetails.incentives.totalAppliedIncentives  | currency:'USD' }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row base-price1 font-size-14">
+                                    <div class="col-6 line1">
+                                        <div class="inline-block">   
+                                            <h6 class="mb-0">Equipment Cost</h6>
+                                        </div>
+                                        <div class="info-icon">
+                                            <img src="./assets/info-tooltip-light.svg"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-2 dashed-line line1 inline-block">
+                                        <hr />
+                                    </div>
+                                    <div class="col-4 line1 inline-block">
+                                        <p class="mb-0">{{ currentProductDetails.netCost  | currency:'USD':'symbol':'3.0' }}</p>
+                                    </div>
+                                </div>
+                                <div class="annual-est">
+                                    <p class="annual-est-text">
+                                      Your Est. Annual Savings is
+                                      <span class="primary-color">{{
+                                        currentProductDetails.est_annual_savings_cal | currency
+                                      }}</span>
+                                    </p>
+                                    <div class="img-info">
+                                      <img class="info-img mb-1" src="./assets/info-tooltip-light.svg" />
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div> </mat-tab>
+                  </mat-tab-group>
+            </div>
+            <div class="terms">
+                <p>
+                    All values displayed on this page are based on standard industry assumptions. Savings numbers are calculated based on present day
+                    market circumstances, but may vary due to utility adjustments to rates or policy, or due to updates to the system
+                    design. Finance payments are estimates subject to credit approval and based upon current provider rates that are subject to change. 
+                    Your payments and tares may be higher.
+                </p>
+            </div>
+        </div>
+        
+      </div>
+      
+  </div>
+</mat-dialog-content>

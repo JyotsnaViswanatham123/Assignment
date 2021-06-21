@@ -23,15 +23,15 @@ body {
 }
 
 .border-radius-right {
-    border-radius: 5px !important;
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
+    border-radius: unset;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
 }
 
 .border-radius-left {
-    border-radius: 5px !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+    border-radius: unset;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
 }
 
 .bg-white {

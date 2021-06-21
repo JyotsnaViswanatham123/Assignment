@@ -37,7 +37,7 @@
           ></mat-slider>
         </div>
         <div class="col-5 gallons-info">
-          <p class="gallon-text abc">{{ sliderVal }} Gallons</p>
+          <p class="gallon-text">{{ sliderVal }} Gallons</p>
           <p *ngIf="sliderVal <= 50" class="gallon-text">(3-5 people)</p>
           <p *ngIf="sliderVal > 50 && sliderVal <= 60" class="gallon-text">
             (5-8 people)
@@ -59,16 +59,16 @@
       </div>
       <div>
         <button
-        (click)="processRadio('yes')"
+        (click)="processRadio('no')"
         [ngClass]="{ 'btn-selected': noSelected }"
-        class="border-radius-left btn-no btn emergency"
+        class="btn-no btn emergency emergency-left"
       >
         No
       </button>
       <button
-        (click)="processRadio('no')"
+        (click)="processRadio('yes')"
         [ngClass]="{ 'btn-selected': yesSelected }"
-        class="border-radius-right btn emergency"
+        class="btn emergency emergency-right"
       >
         Yes
       </button>

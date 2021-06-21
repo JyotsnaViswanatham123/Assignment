@@ -55,6 +55,18 @@ label {
     height: 50px;;
 }
 
+.emergency-left {
+    border-radius: unset;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+
+.emergency-right {
+    border-radius: unset;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
 .gallon-text {
     margin-bottom: 0;
 }
@@ -71,9 +83,9 @@ label {
     background-color: $bg-color;
     font-size: 14px;
     height: 41px;
-    border-radius: 10px !important;
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
+    border-radius: unset;
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
 }
 
 .gallon-text {
@@ -94,7 +106,7 @@ label {
 
 .fuel-type {
     width: 50%;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px solid $lightgray;
     height: 40px;
 }
@@ -137,7 +149,7 @@ mat-slider ::ng-deep .mat-slider-wrapper ::ng-deep .mat-slider-track-wrapper ::n
 }
 
 mat-select ::ng-deep .mat-select-trigger {
-    margin-top: 2%;
+    margin-top: 3%;
 }
 
 mat-select ::ng-deep .mat-select-trigger ::ng-deep .mat-select-value {

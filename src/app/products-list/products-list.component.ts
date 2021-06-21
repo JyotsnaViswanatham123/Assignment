@@ -55,12 +55,12 @@ export class ProductsListComponent implements OnInit {
             this.errorText =
               "Oops! No Products found at the moment. Please try again later";
           }
-          for (let eachProduct of this.productsData) {
-            eachProduct.img =  this.images[Math.floor(Math.random()*(2-0+1)+0)];
+          this.productsData.forEach((eachProduct, index) => {
+            eachProduct.img =  this.images[index%3];
             if (eachProduct.volume == this.sliderVal) {
               this.productsToBeDisplayed.push(eachProduct);
             }
-          }
+          });
           if (!this.productsToBeDisplayed) {
             this.errorText =
               "Oops! No Products found for the selected volume. Please try again later or checkout other items";
